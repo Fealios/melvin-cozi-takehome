@@ -1,0 +1,29 @@
+#form-holder {
+    max-width: 500px;
+}
+
+.control-holder {
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: 20% 80%;
+
+    :nth-child(1) {
+        grid-column: 1/2;
+    }
+
+    :nth-child(2) {
+        grid-column: 2/3;
+        margin-top: 2px;
+
+        input {
+            width: 100%;
+            height: 35px;
+            padding: 8px;
+        }
+
+        select {
+            height: 51px;
+            min-width: 51px;
+        }
+    }
+}
