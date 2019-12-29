@@ -13,7 +13,7 @@ app.post('/', (req, res) => {
         res.send({error: 'Please include a body in your request'});
     } else {
         const interest = req.body;
-        return saveInterest(interest);
+        res.send(saveInterest(interest));
     }
 })
 
