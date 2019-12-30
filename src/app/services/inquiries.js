@@ -2,10 +2,9 @@ const fs = require("fs");
 
 const addInquiry = (inquiry) => {
     const inquiryArr = loadInquiries();
-    console.log(inquiryArr);
     inquiryArr.push(inquiry);
 
-    saveInqueries(inquiryArr);
+    return saveInqueries(inquiryArr);
 }
 
 const saveInqueries = (inquiryArr) => {
@@ -13,7 +12,7 @@ const saveInqueries = (inquiryArr) => {
 
     try {
         fs.writeFileSync(__dirname + '/../misc/inquiries.json', inquiryJSON);
-        return 'Success';
+        return 'Successfully logged new inquiry';
     } catch (error) {
         console.log(error);
         return error;

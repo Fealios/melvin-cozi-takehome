@@ -1,4 +1,4 @@
-export class Interest {
+export class Inquiry {
     constructor(
         private firstName: string,
         private lastName: string,

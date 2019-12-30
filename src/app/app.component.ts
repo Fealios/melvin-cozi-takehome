@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormControl, FormGroup, FormControlName, Validators } from '@angular/forms';
 import { states } from './misc/states';
-import { Interest } from './models/interest';
+import { Inquiry } from './models/inquiry';
 import { DataService } from './services/data.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   public myForm: FormGroup;
   public selectedSubmission;
 
-  public allInterests: Interest[] = [];
+  public allInquiries: Inquiry[] = [];
 
 
   constructor(private fb: FormBuilder, private svcData: DataService) {
@@ -43,20 +43,24 @@ export class AppComponent implements OnInit {
   }
 
   public submitForm(): void {
-    const newInterest = this.createNewInterest();
+    const newInterest = this.createNewInquiry();
+    console.log(newInterest);
     this.svcData.saveInterest(newInterest).subscribe(
       res => {
         console.log(res);
+      },
+      err => {
+        console.log(err);
       }
     )
-    this.allInterests.push(newInterest);
+    this.allInquiries.push(newInterest);
 
     // this.myForm.reset();
   }
 
-  private createNewInterest(): Interest {
+  private createNewInquiry(): Inquiry {
     const {firstName, lastName, address, productName, cityName, stateAbrv, zipcode} = this.myForm.value;
 
-    return new Interest(firstName, lastName, address, cityName, stateAbrv, zipcode, productName);
+    return new Inquiry(firstName, lastName, address, cityName, stateAbrv, zipcode, productName);
   }
 }

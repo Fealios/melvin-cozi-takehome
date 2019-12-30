@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Interest } from '../models/interest';
+import { Inquiry } from '../models/inquiry';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -11,7 +11,7 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  saveInterest(item: Interest): Observable<any> {
+  saveInterest(item: Inquiry): Observable<any> {
     return this.http.post(`${this.apiBaseURL}`, item);
   }
 }
