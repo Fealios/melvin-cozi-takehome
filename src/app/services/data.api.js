@@ -12,19 +12,37 @@ app.post('/', (req, res) => {
     if (!req.body) {
         res.send({error: 'Please include a body in your request'});
     } else {
-        const interest = req.body;
-        res.send(saveInterest(interest));
+        const inquiry = req.body;
+        res.send(addInquiry(inquiry));
     }
 })
 
-const saveInterest = (interest) => {
-    const interestJSON = JSON.stringify(interest);
+const addInquiry = (inquiry) => {
+    const inquiryArr = loadInquiries();
+    console.log(inquiryArr);
+    inquiryArr.push(inquiry);
+
+    saveInqueries(inquiryArr);
+}
+
+const saveInqueries = (inquiryArr) => {
+    const inquiryJSON = JSON.stringify(inquiryArr);
+
     try {
-        fs.writeFileSync(__dirname + '/../misc/interests.json', interestJSON);
+        fs.writeFileSync(__dirname + '/../misc/inquiries.json', inquiryJSON);
         return 'Success';
     } catch (error) {
         console.log(error);
         return error;
+    }
+}
+
+const loadInquiries = () => {
+    try {
+        const inquirysJSON = fs.readFileSync(__dirname + '/../misc/inquiries.json').toString();
+        return JSON.parse(inquirysJSON);
+    } catch (error) {
+        return [];
     }
 }
 

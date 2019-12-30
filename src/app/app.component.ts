@@ -51,7 +51,7 @@ export class AppComponent implements OnInit {
     )
     this.allInterests.push(newInterest);
 
-    this.myForm.reset();
+    // this.myForm.reset();
   }
 
   private createNewInterest(): Interest {

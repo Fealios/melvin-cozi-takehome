@@ -1,0 +1,29 @@
+[
+    {
+        "firstName": "melvin",
+        "lastName": "gruschow",
+        "address": "1st ave ne",
+        "cityName": "seattle",
+        "stateAbrv": "WA",
+        "zipcode": "98125",
+        "productName": "ljkasdf"
+    },
+    {
+        "firstName": "melvin",
+        "lastName": "gruschow",
+        "address": "1st ave ne",
+        "cityName": "seattle",
+        "stateAbrv": "WA",
+        "zipcode": "98125",
+        "productName": "ljkasdf"
+    },
+    {
+        "firstName": "melvin",
+        "lastName": "gruschow",
+        "address": "1st ave ne",
+        "cityName": "seattle",
+        "stateAbrv": "WA",
+        "zipcode": "98125",
+        "productName": "ljkasdf"
+    }
+]

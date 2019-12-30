@@ -12,7 +12,6 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   saveInterest(item: Interest): Observable<any> {
-    console.log(item);
     return this.http.post(`${this.apiBaseURL}`, item);
   }
 }
