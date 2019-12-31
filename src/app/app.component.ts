@@ -44,10 +44,9 @@ export class AppComponent implements OnInit {
 
   public submitForm(): void {
     const newInterest = this.createNewInquiry();
-    console.log(newInterest);
     this.svcData.saveInterest(newInterest).subscribe(
       res => {
-        console.log(res);
+        console.log(res.success);
       },
       err => {
         console.log(err);

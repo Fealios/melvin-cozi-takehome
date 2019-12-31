@@ -1,74 +1,73 @@
-
 <div id="form-holder">
   <h2>Interest Submission</h2>
   <form (submit)="submitForm()" action="" [formGroup]="myForm">
-      <div class="control-holder">
-        <div>
-          <p>First Name:</p>
-        </div>
-        <div>
-          <input formControlName="firstName" type="text">
-        </div>
+    <div class="control-holder">
+      <div>
+        <p>First Name:</p>
       </div>
+      <div>
+        <input formControlName="firstName" type="text">
+      </div>
+    </div>
 
-      <div class="control-holder">
-        <div>
-          <p>Last Name:</p>
-        </div>
-        <div>
-          <input formControlName="lastName" type="text">
-        </div>
+    <div class="control-holder">
+      <div>
+        <p>Last Name:</p>
       </div>
+      <div>
+        <input formControlName="lastName" type="text">
+      </div>
+    </div>
 
-      <div class="control-holder">
-        <div>
-          <p>Address:</p>
-        </div>
-        <div>
-          <input formControlName="address" type="text">
-        </div>
+    <div class="control-holder">
+      <div>
+        <p>Address:</p>
       </div>
+      <div>
+        <input formControlName="address" type="text">
+      </div>
+    </div>
 
-      <div class="control-holder">
-        <div>
-          <p>City Name:</p>
-        </div>
-        <div>
-          <input formControlName="cityName" type="text">
-        </div>
+    <div class="control-holder">
+      <div>
+        <p>City Name:</p>
       </div>
+      <div>
+        <input formControlName="cityName" type="text">
+      </div>
+    </div>
 
-      <div class="control-holder">
-        <div>
-          <p>State:</p>
-        </div>
-        <div>
-          <select formControlName="stateAbrv" name="" id="">
-            <option *ngFor="let state of states" [value]="state.abbreviation"> {{state.abbreviation}}</option>
-          </select>
-        </div>
+    <div class="control-holder">
+      <div>
+        <p>State:</p>
       </div>
+      <div>
+        <select formControlName="stateAbrv" name="" id="">
+          <option *ngFor="let state of states" [value]="state.abbreviation"> {{state.abbreviation}}</option>
+        </select>
+      </div>
+    </div>
 
-      <div class="control-holder">
-        <div>
-          <p>Zipcode:</p>
-        </div>
-        <div>
-          <input formControlName="zipcode" type="text">
-        </div>
+    <div class="control-holder">
+      <div>
+        <p>Zipcode:</p>
       </div>
+      <div>
+        <input formControlName="zipcode" type="text">
+      </div>
+    </div>
 
-      <div class="control-holder">
-        <div>
-          <p>Product:</p>
-        </div>
-        <div>
-          <input formControlName="productName" type="text">
-        </div>
+    <div class="control-holder">
+      <div>
+        <p>Product:</p>
       </div>
+      <div>
+        <input formControlName="productName" type="text">
+      </div>
+    </div>
 
-      <div id="button-holder">
-        <button id="submit-button" type="submit">Submit</button>
-      </div>
+    <div id="button-holder">
+      <button id="submit-button" type="submit">Submit</button>
+    </div>
   </form>
 </div>

@@ -6,7 +6,7 @@ const inquiries = require('./inquiries');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cors())
+app.use(cors());
 
 // parse application/json
 app.use(bodyParser.json())
@@ -20,7 +20,13 @@ app.post('/', (req, res) => {
         res.send({error: 'Please include a body in your request'});
     } else {
         const inquiry = req.body;
-        res.send(inquiries.addInquiry(inquiry));
+        const event = inquiries.addInquiry(inquiry);
+        console.log(event);
+        if (event.success) {
+            res.status(200).send({success: 'Added new inquiry'});
+        } else {
+            res.status(500).send(event);
+        }
     }
 })
 

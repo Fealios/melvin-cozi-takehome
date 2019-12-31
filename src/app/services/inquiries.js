@@ -5,11 +5,7 @@ const addInquiry = (inquiry) => {
     inquiryArr.push(inquiry);
 
     const saved = saveInqueries(inquiryArr);
-    if(saved.success) {
-        return 'Successfully added new inquiry'
-    } else {
-        return saved;
-    }
+    return saved;
 }
 
 const saveInqueries = (inquiryArr) => {
