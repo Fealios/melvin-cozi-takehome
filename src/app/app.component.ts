@@ -11,6 +11,8 @@ import { DataService } from './services/data.service';
 })
 export class AppComponent implements OnInit {
   title = 'cozi-takehome';
+  public isLoading: boolean = true;
+
   public myForm: FormGroup;
   public currentInquiry: Inquiry;
 
@@ -23,6 +25,12 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.createEmptyForm();
+    this.svcData.getAllInquiries().subscribe(
+      data => {
+        console.log(data);
+        this.allInquiries = data.reverse();
+      }
+    )
     // create an empty form on init by default
   }
 
@@ -60,7 +68,7 @@ export class AppComponent implements OnInit {
           console.log(err);
         }
       )
-      this.allInquiries.push(newInquiry);
+      this.allInquiries.unshift(newInquiry);
       // add the new inquiry to the list of all inquiries from the database
   
       this.myForm.reset();
@@ -74,5 +82,9 @@ export class AppComponent implements OnInit {
     return new Inquiry(firstName, lastName, address, cityName, stateAbrv, zipcode, productName);
     // retrieve the data from the form and immediately utilize for a new Inquiry
     // return newly created Inquiry 
+  }
+
+  public selectInquiry(inquiry: Inquiry): void {
+    this.currentInquiry = inquiry;
   }
 }

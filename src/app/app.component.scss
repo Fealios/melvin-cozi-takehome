@@ -1,23 +1,68 @@
 #outer {
-    display: flexbox;
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    div {
+        margin: 5px;
+    }
 
     #response-holder {
-        margin-top: 10px;
+        // holds the response message area
         border-radius: 5px;
         border: solid;
-        max-width: 33%;
-        height: 300px;
+        width: 30%;
+        min-width: 350px;
+        padding: 10px;
+        min-height: 300px;
+        color: rgba(0, 0, 0, 0.54);;
+    }
+
+    #previous-holder {
+        // holds the previous inquiries selector
+        border-radius: 5px;
+        width: 30%;
+        min-width: 350px;
+        padding: 10px;
+        height: 554px;
+        overflow-y: scroll;
+        background-color: white;
+
+        h4 {
+            margin-left: 5px;
+        }
+
+        .previous-selector {
+            color: rgba(0, 0, 0, 0.54);
+            padding: 5px;
+            border: solid 1px grey;
+            border-radius: 3px;
+            background-color: white;
+            margin-top: 5px;
+        }
+
+        .previous-selector:hover {
+            cursor: pointer;
+            background-color: #e8e8e8;
+        }
+
+        .previous-selector:focus {
+            background-color: #e8e8e8;
+        }
     }
 }
 
 #form-holder {
+    // everything in here I stole from the mobile Cozi login form
+    // but it's not stealing cus development is 'open source'.  
+    // holds the form area
     h2 {
         color: #3bbbe9;
         text-align: center;
     }
     background-color: white;
-    max-width: 33%;
+    width: 30%;
+    min-width: 350px;
+    height: 554px;
     padding: 10px;
     border-radius: 5px;
 
@@ -55,7 +100,7 @@
         margin-top: 2px;
 
         input {
-            width: 95%;
+            width: 94%;
             height: 35px;
             padding: 8px;
         }

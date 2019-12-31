@@ -11,7 +11,11 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
+  getAllInquiries(): Observable<Inquiry[]> {
+    return this.http.get<Inquiry[]>(this.apiBaseURL);
+  }
+
   saveInterest(item: Inquiry): Observable<any> {
-    return this.http.post(`${this.apiBaseURL}`, item);
+    return this.http.post(this.apiBaseURL, item);
   }
 }
