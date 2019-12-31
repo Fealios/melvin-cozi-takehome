@@ -11,6 +11,10 @@ app.use(cors())
 // parse application/json
 app.use(bodyParser.json())
 
+app.get('/', (req, res) => {
+    res.send(inquiries.loadInquiries());
+})
+
 app.post('/', (req, res) => {
     if (!req.body) {
         res.send({error: 'Please include a body in your request'});

@@ -55,7 +55,7 @@ export class AppComponent implements OnInit {
     )
     this.allInquiries.push(newInterest);
 
-    // this.myForm.reset();
+    this.myForm.reset();
   }
 
   private createNewInquiry(): Inquiry {

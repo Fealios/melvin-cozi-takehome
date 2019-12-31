@@ -4,7 +4,12 @@ const addInquiry = (inquiry) => {
     const inquiryArr = loadInquiries();
     inquiryArr.push(inquiry);
 
-    return saveInqueries(inquiryArr);
+    const saved = saveInqueries(inquiryArr);
+    if(saved.success) {
+        return 'Successfully added new inquiry'
+    } else {
+        return saved;
+    }
 }
 
 const saveInqueries = (inquiryArr) => {
@@ -12,7 +17,7 @@ const saveInqueries = (inquiryArr) => {
 
     try {
         fs.writeFileSync(__dirname + '/../misc/inquiries.json', inquiryJSON);
-        return 'Successfully logged new inquiry';
+        return {success: 'Successfully saved inquiries'};
     } catch (error) {
         console.log(error);
         return error;

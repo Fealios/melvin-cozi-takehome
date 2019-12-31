@@ -1,10 +1,35 @@
 #form-holder {
-    max-width: 500px;
+    h2 {
+        color: #3bbbe9;
+        text-align: center;
+    }
+    background-color: white;
+    max-width: 430px;
+    padding: 10px;
+    border-radius: 5px;
+
+
+    #button-holder {
+        height: 40px;
+        position: relative;
+        width: 100%;
+
+        #submit-button {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            cursor: pointer;
+            width: 80px;
+            height: 30px;
+        }
+    }
 }
 
 .control-holder {
+    max-width: 430px;
     margin-top: 5px;
     display: grid;
+    color: rgba(0, 0, 0, 0.54);
     grid-template-columns: 20% 80%;
 
     :nth-child(1) {
@@ -16,9 +41,14 @@
         margin-top: 2px;
 
         input {
-            width: 100%;
+            width: 95%;
             height: 35px;
             padding: 8px;
+        }
+
+        input:hover {
+            background-color: #e8e8e8;
+            border: none;
         }
 
         select {
