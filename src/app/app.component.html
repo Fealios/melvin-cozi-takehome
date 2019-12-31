@@ -1,73 +1,89 @@
-<div id="form-holder">
-  <h2>Interest Submission</h2>
-  <form (submit)="submitForm()" action="" [formGroup]="myForm">
-    <div class="control-holder">
-      <div>
-        <p>First Name:</p>
+<div id="outer">
+  <div id="form-holder">
+    <h2>Interest Submission</h2>
+    <form (submit)="submitForm()" action="" [formGroup]="myForm">
+      <div class="control-holder">
+        <div>
+          <p>First Name:</p>
+        </div>
+        <div>
+          <input formControlName="firstName" type="text">
+        </div>
       </div>
-      <div>
-        <input formControlName="firstName" type="text">
-      </div>
-    </div>
 
-    <div class="control-holder">
-      <div>
-        <p>Last Name:</p>
+      <div class="control-holder">
+        <div>
+          <p>Last Name:</p>
+        </div>
+        <div>
+          <input formControlName="lastName" type="text">
+        </div>
       </div>
-      <div>
-        <input formControlName="lastName" type="text">
-      </div>
-    </div>
 
-    <div class="control-holder">
-      <div>
-        <p>Address:</p>
+      <div class="control-holder">
+        <div>
+          <p>Address:</p>
+        </div>
+        <div>
+          <input formControlName="address" type="text">
+        </div>
       </div>
-      <div>
-        <input formControlName="address" type="text">
-      </div>
-    </div>
 
-    <div class="control-holder">
-      <div>
-        <p>City Name:</p>
+      <div class="control-holder">
+        <div>
+          <p>City Name:</p>
+        </div>
+        <div>
+          <input formControlName="cityName" type="text">
+        </div>
       </div>
-      <div>
-        <input formControlName="cityName" type="text">
-      </div>
-    </div>
 
-    <div class="control-holder">
-      <div>
-        <p>State:</p>
+      <div class="control-holder">
+        <div>
+          <p>State:</p>
+        </div>
+        <div>
+          <select formControlName="stateAbrv" name="" id="">
+            <option *ngFor="let state of states" [value]="state.abbreviation"> {{state.abbreviation}}</option>
+          </select>
+        </div>
       </div>
-      <div>
-        <select formControlName="stateAbrv" name="" id="">
-          <option *ngFor="let state of states" [value]="state.abbreviation"> {{state.abbreviation}}</option>
-        </select>
-      </div>
-    </div>
 
-    <div class="control-holder">
-      <div>
-        <p>Zipcode:</p>
+      <div class="control-holder">
+        <div>
+          <p>Zipcode:</p>
+        </div>
+        <div>
+          <input formControlName="zipcode" type="text">
+        </div>
       </div>
-      <div>
-        <input formControlName="zipcode" type="text">
-      </div>
-    </div>
 
-    <div class="control-holder">
-      <div>
-        <p>Product:</p>
+      <div class="control-holder">
+        <div>
+          <p>Product:</p>
+        </div>
+        <div>
+          <input formControlName="productName" type="text">
+        </div>
       </div>
-      <div>
-        <input formControlName="productName" type="text">
-      </div>
-    </div>
 
-    <div id="button-holder">
-      <button id="submit-button" type="submit">Submit</button>
-    </div>
-  </form>
+      <div id="button-holder">
+        <button id="submit-button" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="response-holder" *ngIf="currentInquiry">
+    <h5>Dear {{currentInquiry.firstName | titlecase}} {{currentInquiry.lastName | titlecase}},</h5>
+
+    <p>Thank you for your interest in {{currentInquiry.productName}}s. Unfortunately, we sold our last
+      {{currentInquiry.productName}} yesterday.
+    </p>
+
+    <p>
+      {{currentInquiry.firstName | titlecase}}, if you have any more questions about our products, email us at
+      support@{{currentInquiry.productName}}.com, tweet to @{{currentInquiry.productName}}_support,
+      or call us at 1-800-{{currentInquiry.productName | uppercase}}
+    </p>
+  </div>
 </div>

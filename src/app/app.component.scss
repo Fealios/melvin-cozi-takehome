@@ -1,10 +1,23 @@
+#outer {
+    display: flexbox;
+    flex-direction: column;
+
+    #response-holder {
+        margin-top: 10px;
+        border-radius: 5px;
+        border: solid;
+        max-width: 33%;
+        height: 300px;
+    }
+}
+
 #form-holder {
     h2 {
         color: #3bbbe9;
         text-align: center;
     }
     background-color: white;
-    max-width: 430px;
+    max-width: 33%;
     padding: 10px;
     border-radius: 5px;
 
@@ -27,6 +40,7 @@
 
 .control-holder {
     max-width: 430px;
+    height: 56px;
     margin-top: 5px;
     display: grid;
     color: rgba(0, 0, 0, 0.54);
@@ -51,9 +65,24 @@
             border: none;
         }
 
+        input:focus {
+            background-color: #e8e8e8;
+            border: none;
+        }
+
         select {
             height: 51px;
-            min-width: 51px;
+            min-width: 56px;
+        }
+
+        select:hover {
+            background-color: #e8e8e8;
+            border: none;
+        }
+
+        select:focus {
+            background-color: #e8e8e8;
+            border: none;
         }
     }
 }
