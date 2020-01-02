@@ -91,7 +91,7 @@
     <h4>Previous Inquiries</h4>
     <div (click)="selectInquiry(inquiry)" class="previous-selector" *ngFor="let inquiry of allInquiries">
       <p>
-        Name: {{inquiry?.firstName | titlecase}} {{inquiry?.lastName | titlecase}} | Product: {{inquiry?.productName}}
+        Last Name: {{inquiry?.lastName | titlecase}} | Product: {{inquiry?.productName}}
       </p>
     </div>
   </div>
