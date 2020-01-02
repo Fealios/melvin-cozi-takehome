@@ -1,4 +1,4 @@
-<div id="outer">
+<div id="outer" *ngIf="!isLoading">
   <div id="form-holder">
     <h2>Interest Submission</h2>
     <form (submit)="submitForm()" action="" [formGroup]="myForm">
@@ -88,7 +88,7 @@
     </p>
   </div>
 
-  <div id="previous-holder" *ngIf="allInquiries.length > 1">
+  <div id="previous-holder" *ngIf="allInquiries.length > 0">
     <h4>Previous Inquiries</h4>
     <div (click)="selectInquiry(inquiry)" class="previous-selector" *ngFor="let inquiry of allInquiries">
       <p>
@@ -96,4 +96,9 @@
       </p>
     </div>
   </div>
+</div>
+
+<!-- LOADING ANIMATION -->
+<div *ngIf="isLoading" id="loading-animation-holder">
+  <div class="lds-dual-ring"></div>
 </div>

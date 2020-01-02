@@ -29,6 +29,8 @@ export class AppComponent implements OnInit {
       data => {
         console.log(data);
         this.allInquiries = data.reverse();
+
+        this.isLoading = false;
       }
     )
     // create an empty form on init by default
@@ -62,22 +64,22 @@ export class AppComponent implements OnInit {
         res => {
           console.log(res.success);
           this.currentInquiry = newInquiry;
+          this.allInquiries.unshift(newInquiry);
           // set the currentInquiry to the one just created in order to populate the response area message
         },
         err => {
           console.log(err);
         }
       )
-      this.allInquiries.unshift(newInquiry);
       // add the new inquiry to the list of all inquiries from the database
-  
+
       this.myForm.reset();
       // clear the reactive form
     }
   }
 
   private createNewInquiry(): Inquiry {
-    const {firstName, lastName, address, productName, cityName, stateAbrv, zipcode} = this.myForm.value;
+    const { firstName, lastName, address, productName, cityName, stateAbrv, zipcode } = this.myForm.value;
 
     return new Inquiry(firstName, lastName, address, cityName, stateAbrv, zipcode, productName);
     // retrieve the data from the form and immediately utilize for a new Inquiry
