@@ -12,6 +12,7 @@
         border: solid;
         width: 30%;
         min-width: 350px;
+        max-width: 600px;
         padding: 10px;
         min-height: 300px;
         color: rgba(0, 0, 0, 0.54);;
@@ -22,6 +23,7 @@
         border-radius: 5px;
         width: 30%;
         min-width: 350px;
+        max-width: 600px;
         padding: 10px;
         height: 554px;
         overflow-y: scroll;
@@ -62,6 +64,7 @@
     background-color: white;
     width: 30%;
     min-width: 350px;
+    max-width: 600px;
     height: 554px;
     padding: 10px;
     border-radius: 5px;
@@ -84,7 +87,7 @@
 }
 
 .control-holder {
-    max-width: 430px;
+    max-width: 97%;
     height: 56px;
     margin-top: 5px;
     display: grid;
