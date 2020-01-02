@@ -1,7 +1,7 @@
 # CoziTakehome
 
 ## Starting up
-From the root directory run the command 'npm install' to receive the necessary node modules.  From the same console, run 'ng serve' to start up the Angular application, and navigate to localhost:4200 in a web browser.  With a second condole navigate to src/app/services.  Run 'node inquiries.api/js' to startup the NodeJS backend service, which will be listening on port 3000.  Please ensure that port 4200 and port 3000 are available if you are having issues reaching either the web page or contacting the service.  
+From the root directory run the command 'npm install' to receive the necessary node modules.  From the same console, run 'ng serve' to start up the Angular application. With a second condole navigate to src/app/services.  Run 'node inquiries.api/js' to startup the NodeJS backend service, which will be listening on port 3000. Now navigate to localhost:4200 in a browser. Please ensure that port 4200 and port 3000 are available if you are having issues reaching either the web page or contacting the service.  
 
 ## Technology Breakdown. 
 This app was created by Melvin Gruschow as a takehome assignment for Cozi.  I am utilizing Angular 8.3, with a NodeJS 11.3.0 backend, with express 4.17.1 to manage HTTP requests.  I am also using the cors node package to allow for local HTTP requests to be self signed so that the server can actually respond in the first place, as well as the body-parser package to simplify my life when retrieving parameters from the POST request.  Finally, I'm using the built in File System module to write/read to my local NOSQL database (AKA my simple JSON file).
