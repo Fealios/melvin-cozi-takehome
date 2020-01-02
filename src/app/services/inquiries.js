@@ -20,6 +20,7 @@ const saveInqueries = (inquiryArr) => {
 
     try {
         fs.writeFileSync(__dirname + '/../misc/inquiries.json', inquiryJSON);
+        // using the built in __dirname functionality to always target the same location in directory
         return {success: 'Successfully saved inquiries'};
     } catch (error) {
         console.log(error);
@@ -28,6 +29,7 @@ const saveInqueries = (inquiryArr) => {
 }
 
 const loadInquiries = () => {
+    // abstracting loading away to this method
     // FS.readFileSync functions such that if the file is empty/doesn't exist, it just throws an error
     // I compensate for this using a try catch block, and just return an empty [] on error
     try {

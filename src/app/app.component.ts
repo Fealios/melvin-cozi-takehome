@@ -25,15 +25,20 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.createEmptyForm();
+    // create an empty form on init by default
     this.svcData.getAllInquiries().subscribe(
       data => {
+        // load the previous inquiries
         console.log(data);
         this.allInquiries = data.reverse();
 
+      },
+      err => {},
+      () => {
         this.isLoading = false;
+        // when the observable resolves, load page
       }
     )
-    // create an empty form on init by default
   }
 
   get states(): any[] {
@@ -43,7 +48,7 @@ export class AppComponent implements OnInit {
 
   private createEmptyForm(): void {
     // this will create an empty reactive form
-    // as the name suggests you could create a filled form with an already made object for editing later
+    // as the name suggests you could create a filled form with an already made object for updates later
     this.myForm = this.fb.group({
       firstName: new FormControl('', [Validators.required]),
       lastName: new FormControl('', [Validators.required]),
